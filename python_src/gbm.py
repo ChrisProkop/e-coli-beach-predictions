@@ -101,8 +101,12 @@ if __name__ == '__main__':
     classes = df['Escherichia.coli'] > 235
     predictors = df.drop(
         ['Full_date', 'Escherichia.coli',  'cloudCover',
-         'temperatureMin', 'temperatureMax', 'precipIntensityMax', 'precipProbability'],
-        axis=1
+         'temperatureMin', 'temperatureMax', 'precipIntensityMax', 'precipProbability', 	'12th_PriorEscherichia.coli','31st_PriorEscherichia.coli', '57th_PriorEscherichia.coli', '63rd_PriorEscherichia.coli', 		'Albion_PriorEscherichia.coli', 'Calumet_PriorEscherichia.coli', 'Foster_PriorEscherichia.coli', 		'Howard_PriorEscherichia.coli', 'Jarvis_PriorEscherichia.coli', 'Juneway_PriorEscherichia.coli', 		'Leone_PriorEscherichia.coli', 'Montrose_PriorEscherichia.coli', 'North Avenue_PriorEscherichia.coli',
+	'Oak Street_PriorEscherichia.coli', 'Ohio_PriorEscherichia.coli', 'Osterman_PriorEscherichia.coli', 		'Rainbow_PriorEscherichia.coli', 'Rogers_PriorEscherichia.coli',
+	'South Shore_PriorEscherichia.coli', '39th_PriorEscherichia.coli'],
+    #print(df.dtypes.index)
+    #predictors = df[['humidity','precipIntensityMax','precipProbability','Wave.Height.Max','Month']]
+    	axis=1
     )
     clfs = gbm(timestamps, predictors, classes)
     print(predictors.columns.tolist())
